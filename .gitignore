@@ -1,4 +1,6 @@
-#node_modules/
+# dependencies
+node_modules/
+
 #dotenv
 .env
 .env.test
