@@ -12,7 +12,7 @@ router.use(function(req, res, next) {
     console.log(req.header("Authorized"));
     if (req.header("Authorized")) {
         try {
-            req.payload = jwt.verify(req.header("Authorized"), privateKey, {algorithms: ["RS256"] } );
+            req.payload = jwt.verify(req.header("Authorization"), privateKey, {algorithms: ["RS256"] } );
             console.log(req.payload);
         } catch(error) {
             return res.status(401).json( {"error": error.message} );
@@ -31,7 +31,7 @@ router.get("/", async function(req, res, next) {
 router.get("/:todoId", async function(req, res, next) {
 	//const todos = await Todo.find().where("author").equals(req.payload.id).exec();
 	//mongoose find query to retrieve todo where todoId == req.params.todoId
-	const todo = await Todo.findOne().where("_id").equals(req.params.id).exec();
+	const todo = await Todo.findOne().where("_id").equals(req.params.todoId).exec();
     return res.status(200).json( {todo} );
 });
 
