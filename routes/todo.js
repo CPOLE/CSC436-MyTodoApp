@@ -9,8 +9,8 @@ const privateKey = process.env.JWT_PRIVATE_KEY;
 //  todo view/creation to logged-in user (i.e. deal with access token)
 //  i.e. handles don't need to deal with token (defined before handlers)
 router.use(function(req, res, next) {
-    console.log(req.header("Authorized"));
-    if (req.header("Authorized")) {
+    console.log(req.header("Authorization"));
+    if (req.header("Authorization")) {
         try {
             req.payload = jwt.verify(req.header("Authorization"), privateKey, {algorithms: ["RS256"] } );
             console.log(req.payload);
