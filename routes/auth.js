@@ -43,7 +43,7 @@ router.post("/login", async function(req, res, next) {
 });
 
 //  include todo count
-router.get("/users", async function(req, res) {
+router.get("/users", async function(req, res, next) {
     const users = await User.findAll().exec();
     return res.status(200).json( {"users": users} );
 });
@@ -64,8 +64,7 @@ router.post("/register", async function(req, res, next) {
                     "id": savedUser._id,
                     "username": savedUser.username
                 })
-            })
-            .catch(error => {
+            }).catch(error => {
                 return res.status(500).json({"error": error.message})
             });
         } else {

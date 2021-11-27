@@ -29,8 +29,6 @@ router.get("/", async function(req, res, next) {
 });
 
 router.get("/:todoId", async function(req, res, next) {
-	//const todos = await Todo.find().where("author").equals(req.payload.id).exec();
-	//mongoose find query to retrieve todo where todoId == req.params.todoId
 	const todo = await Todo.findOne().where("_id").equals(req.params.todoId).exec();
     return res.status(200).json(todo);
 });
