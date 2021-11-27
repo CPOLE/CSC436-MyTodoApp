@@ -43,7 +43,7 @@ router.post("/login", async function(req, res, next) {
 });
 
 //  include todo count
-router.get("/users", async function(req, res, next) {
+router.get("/users", async function(req, res) {
     const users = await User.findAll().exec();
     return res.status(200).json( {"users": users} );
 });
