@@ -1,0 +1,2 @@
+(this.webpackJsonpweek2demo=this.webpackJsonpweek2demo||[]).push([[3],{110:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return i}));var s=n(0),u=n(8),c=n(1);function i(){var e=Object(s.useContext)(u.a),t=e.state,n=e.dispatch,i=t.user;return Object(c.jsxs)("form",{onSubmit:function(e){e.preventDefault(),n({type:"LOGOUT"})},children:[Object(c.jsxs)("p",{children:[Object(c.jsx)("b",{children:"Logged in as:"})," ",i.username]}),Object(c.jsx)("input",{type:"submit",value:"Logout"})]})}}}]);
+//# sourceMappingURL=3.e943140a.chunk.js.map
