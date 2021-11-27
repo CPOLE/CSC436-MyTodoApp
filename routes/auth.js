@@ -42,6 +42,12 @@ router.post("/login", async function(req, res, next) {
     }
 });
 
+//  include todo count
+router.get("/users", async function(req, res, next) {
+    const users = await User.findAll().exec();
+    return res.status(200).json( {"users": users} );
+});
+
 //  async function?
 router.post("/register", async function(req, res, next) {
     if (req.body.username && req.body.password && req.body.passwordRepeat) {
